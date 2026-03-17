@@ -1,27 +1,27 @@
 [submodule "vendored_deps/spdlog"]
 	path = vendored_deps/spdlog
-	url = git@github.com:gabime/spdlog.git
+	url = https://github.com/gabime/spdlog.git
 [submodule "vendored_deps/glm"]
 	path = vendored_deps/glm
-	url = git@github.com:g-truc/glm.git
+	url = https://github.com/g-truc/glm.git
 [submodule "vendored_deps/glbinding"]
 	path = vendored_deps/glbinding
-	url = https://github.com/cginternals/glbinding
+	url = https://github.com/cginternals/glbinding.git
 [submodule "vendored_deps/glfw"]
 	path = vendored_deps/glfw
-	url = git@github.com:glfw/glfw.git
+	url = https://github.com/glfw/glfw.git
 [submodule "vendored_deps/imgui_wrapper/imgui"]
 	path = vendored_deps/imgui_wrapper/imgui
-	url = git@github.com:ocornut/imgui.git
+	url = https://github.com/ocornut/imgui.git
 [submodule "vendored_deps/flatbuffers"]
 	path = vendored_deps/flatbuffers
-	url = git@github.com:google/flatbuffers.git
+	url = https://github.com/google/flatbuffers.git
 [submodule "vendored_deps/asio"]
 	path = vendored_deps/asio
-	url = git@github.com:chriskohlhoff/asio.git
+	url = https://github.com/chriskohlhoff/asio.git
 [submodule "vendored_deps/cxxopts"]
 	path = vendored_deps/cxxopts
-	url = git@github.com:jarro2783/cxxopts.git
+	url = https://github.com/jarro2783/cxxopts.git
 [submodule "vendored_deps/fmt"]
 	path = vendored_deps/fmt
-	url = git@github.com:fmtlib/fmt.git
+	url = https://github.com/fmtlib/fmt.git
