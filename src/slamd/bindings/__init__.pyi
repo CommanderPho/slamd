@@ -17,13 +17,13 @@ class Scene:
 
 class Visualizer:
     def __init__(
-        self, name: str, port: typing.SupportsInt | typing.SupportsIndex = 5555
+        self, name: str, port: typing.Union[typing.SupportsInt, typing.SupportsIndex] = 5555
     ) -> None: ...
     def add_scene(self, name: str, scene: Scene) -> None: ...
     def delete_scene(self, arg0: str) -> None: ...
     def scene(self, name: str) -> Scene: ...
 
 def spawn_window(
-    port: typing.SupportsInt | typing.SupportsIndex = 5555,
-    executable_path: str | None = None,
+    port: typing.Union[typing.SupportsInt, typing.SupportsIndex] = 5555,
+    executable_path: typing.Union[str, None] = None,
 ) -> None: ...
