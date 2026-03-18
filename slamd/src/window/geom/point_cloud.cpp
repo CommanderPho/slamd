@@ -52,7 +52,7 @@ std::shared_ptr<PointCloud> PointCloud::deserialize(
     );
 }
 
-std::tuple<size_t, uint, uint> PointCloud::initialize_sphere_mesh() {
+std::tuple<size_t, unsigned int, unsigned int> PointCloud::initialize_sphere_mesh() {
     // mesh first
     std::vector<glm::vec3> mesh_vertices;
     std::vector<uint32_t> mesh_indices;
@@ -68,7 +68,7 @@ std::tuple<size_t, uint, uint> PointCloud::initialize_sphere_mesh() {
     );
 
     // vertex buffer
-    uint mesh_vbo_id;
+    unsigned int mesh_vbo_id;
     gl::glGenBuffers(1, &mesh_vbo_id);
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, mesh_vbo_id);
 
@@ -95,7 +95,7 @@ std::tuple<size_t, uint, uint> PointCloud::initialize_sphere_mesh() {
     );
 
     // element buffer
-    uint mesh_eab_id;
+    unsigned int mesh_eab_id;
     gl::glGenBuffers(1, &mesh_eab_id);
     gl::glBindBuffer(gl::GL_ELEMENT_ARRAY_BUFFER, mesh_eab_id);
 
@@ -131,8 +131,8 @@ std::tuple<size_t, uint, uint> PointCloud::initialize_sphere_mesh() {
     return std::make_tuple(mesh_indices.size(), mesh_vbo_id, mesh_eab_id);
 }
 
-uint PointCloud::initialize_pos_buffer() {
-    uint pos_vbo_id;
+unsigned int PointCloud::initialize_pos_buffer() {
+    unsigned int pos_vbo_id;
     gl::glGenBuffers(1, &pos_vbo_id);
 
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, pos_vbo_id);
@@ -158,8 +158,8 @@ uint PointCloud::initialize_pos_buffer() {
     return pos_vbo_id;
 }
 
-uint PointCloud::initialize_radii_buffer() {
-    uint vbo_id;
+unsigned int PointCloud::initialize_radii_buffer() {
+    unsigned int vbo_id;
     gl::glGenBuffers(1, &vbo_id);
 
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, vbo_id);
@@ -185,8 +185,8 @@ uint PointCloud::initialize_radii_buffer() {
     return vbo_id;
 }
 
-uint PointCloud::initialize_color_buffer() {
-    uint vbo_id;
+unsigned int PointCloud::initialize_color_buffer() {
+    unsigned int vbo_id;
     gl::glGenBuffers(1, &vbo_id);
 
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, vbo_id);

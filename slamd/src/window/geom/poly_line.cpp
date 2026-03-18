@@ -1,4 +1,5 @@
 #include <glm/gtc/matrix_transform.hpp>
+#include <stdexcept>
 #include <slamd_common/data/mesh.hpp>
 #include <slamd_common/gmath/serialization.hpp>
 #include <slamd_common/numbers.hpp>

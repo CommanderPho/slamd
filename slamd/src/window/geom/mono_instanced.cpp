@@ -45,9 +45,9 @@ MonoInstanced::MonoInstanced(
     this->initialize();
 }
 
-std::tuple<uint, uint> MonoInstanced::initialize_mesh() {
+std::tuple<unsigned int, unsigned int> MonoInstanced::initialize_mesh() {
     // vertex buffer
-    uint mesh_vbo_id;
+    unsigned int mesh_vbo_id;
     gl::glGenBuffers(1, &mesh_vbo_id);
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, mesh_vbo_id);
 
@@ -74,7 +74,7 @@ std::tuple<uint, uint> MonoInstanced::initialize_mesh() {
     );
 
     // element buffer
-    uint mesh_eab_id;
+    unsigned int mesh_eab_id;
     gl::glGenBuffers(1, &mesh_eab_id);
     gl::glBindBuffer(gl::GL_ELEMENT_ARRAY_BUFFER, mesh_eab_id);
 
@@ -110,8 +110,8 @@ std::tuple<uint, uint> MonoInstanced::initialize_mesh() {
     return std::make_tuple(mesh_vbo_id, mesh_eab_id);
 }
 
-uint MonoInstanced::initialize_trans_buffer() {
-    uint trans_vbo_id;
+unsigned int MonoInstanced::initialize_trans_buffer() {
+    unsigned int trans_vbo_id;
     gl::glGenBuffers(1, &trans_vbo_id);
 
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, trans_vbo_id);
@@ -139,8 +139,8 @@ uint MonoInstanced::initialize_trans_buffer() {
     return trans_vbo_id;
 }
 
-uint MonoInstanced::initialize_color_buffer() {
-    uint vbo_id;
+unsigned int MonoInstanced::initialize_color_buffer() {
+    unsigned int vbo_id;
     gl::glGenBuffers(1, &vbo_id);
 
     gl::glBindBuffer(gl::GL_ARRAY_BUFFER, vbo_id);

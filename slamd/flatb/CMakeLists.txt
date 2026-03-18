@@ -1,4 +1,6 @@
-add_compile_options(-Wno-stringop-overflow)
+if(NOT MSVC)
+    add_compile_options(-Wno-stringop-overflow)
+endif()
 
 if (NOT TARGET flatbuffers)
     set(FLATBUFFERS_BUILD_TESTS OFF CACHE BOOL "" FORCE)

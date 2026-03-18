@@ -17,7 +17,7 @@ StateManager::StateManager() {}
 
 void StateManager::try_connect(
     std::string ip,
-    ushort port
+    unsigned short port
 ) {
     this->connection.emplace(ip, port);
 }

@@ -10,12 +10,12 @@ namespace slamd {
 
 class Connection {
    public:
-    Connection(std::string ip, ushort port);
+    Connection(std::string ip, unsigned short port);
     ~Connection();
 
    public:
     const std::string ip;
-    const ushort port;
+    const unsigned short port;
     bool connected = false;
     _utils::ThreadSafeQueue<std::unique_ptr<Message>> messages;
 

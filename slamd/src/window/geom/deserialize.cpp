@@ -1,4 +1,5 @@
 #include <slamd_window/geom/arrows.hpp>
+#include <stdexcept>
 #include <slamd_window/geom/box.hpp>
 #include <slamd_window/geom/camera_frustum.hpp>
 #include <slamd_window/geom/geometry.hpp>

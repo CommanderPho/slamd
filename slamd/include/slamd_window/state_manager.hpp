@@ -18,7 +18,7 @@ class StateManager {
    public:
     StateManager();
 
-    void try_connect(std::string ip = "127.0.0.1", ushort port = 5555);
+    void try_connect(std::string ip = "127.0.0.1", unsigned short port = 5555);
 
     bool apply_updates();
 

@@ -27,11 +27,11 @@ class ArcballIndicator : public Geometry {
     void initialize();
 
    private:
-    uint vao_id = 0;
-    uint vbo_id = 0;
+    unsigned int vao_id = 0;
+    unsigned int vbo_id = 0;
     ShaderProgram shader;
 
-    uint vertex_count;
+    unsigned int vertex_count;
     float arcball_zoom;
     std::optional<std::chrono::high_resolution_clock::time_point>
         last_interacted;

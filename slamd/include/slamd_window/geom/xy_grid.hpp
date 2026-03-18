@@ -23,8 +23,8 @@ class GridXYPlane : public Geometry {
     void initialize();
 
    private:
-    uint vao_id = 0;
-    uint vbo_id = 0;
+    unsigned int vao_id = 0;
+    unsigned int vbo_id = 0;
     ShaderProgram shader;
     size_t vertex_count;
 

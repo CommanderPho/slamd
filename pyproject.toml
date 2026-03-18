@@ -41,4 +41,4 @@ include = ["src/**/*.py", "examples/**/*.py", "tools/**/*.py"]
 include = ["src"]
 
 [tool.cibuildwheel]
-skip = ["*musllinux*", "*win*", "pp*"]
+skip = ["*musllinux*", "pp*"]

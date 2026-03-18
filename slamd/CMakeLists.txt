@@ -72,7 +72,7 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
 
-target_compile_options(slamd_common PRIVATE -Wall -Wextra)
+target_compile_options(slamd_common PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/W4> $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra>)
 
 
 target_link_libraries(
@@ -158,7 +158,7 @@ target_link_libraries(
         imgui::imgui
 )
 
-target_compile_options(slamd_window PRIVATE -Wall -Wextra)
+target_compile_options(slamd_window PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/W4> $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra>)
 
 # SLAMD
 add_library(slamd STATIC)
@@ -221,4 +221,4 @@ target_link_libraries(
         slamd_flatbuff
         slamd_common
 )
-target_compile_options(slamd PRIVATE -Wall -Wextra)
+target_compile_options(slamd PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/W4> $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra>)

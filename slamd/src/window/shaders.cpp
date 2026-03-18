@@ -11,7 +11,7 @@ namespace slamd {
 const std::size_t info_buffer_size = 512;
 
 void ensure_shader_compiled(
-    uint shader_id
+    unsigned int shader_id
 ) {
     int success;
     char info_log_buf[info_buffer_size];
@@ -33,7 +33,7 @@ void ensure_shader_compiled(
 }
 
 void ensure_shader_program_linked(
-    uint program_id
+    unsigned int program_id
 ) {
     int success;
     char info_log_buf[info_buffer_size];
@@ -53,11 +53,11 @@ void ensure_shader_program_linked(
     }
 }
 
-uint compile_vertex_shader(
+unsigned int compile_vertex_shader(
     std::string source
 ) {
     // now we create the vertex shader
-    const uint shader_id = gl::glCreateShader(gl::GL_VERTEX_SHADER);
+    const unsigned int shader_id = gl::glCreateShader(gl::GL_VERTEX_SHADER);
 
     // read the shader source
     const char* shader_source_cstr = source.c_str();
@@ -72,10 +72,10 @@ uint compile_vertex_shader(
     return shader_id;
 }
 
-uint compile_fragment_shader(
+unsigned int compile_fragment_shader(
     std::string source
 ) {
-    const uint shader_id = gl::glCreateShader(gl::GL_FRAGMENT_SHADER);
+    const unsigned int shader_id = gl::glCreateShader(gl::GL_FRAGMENT_SHADER);
 
     const char* shader_source_cstr = source.c_str();
 
@@ -87,11 +87,11 @@ uint compile_fragment_shader(
     return shader_id;
 }
 
-uint make_shader_program(
-    uint vertex_shader_id,
-    uint fragment_shader_id
+unsigned int make_shader_program(
+    unsigned int vertex_shader_id,
+    unsigned int fragment_shader_id
 ) {
-    uint shader_program_id = gl::glCreateProgram();
+    unsigned int shader_program_id = gl::glCreateProgram();
     gl::glAttachShader(shader_program_id, vertex_shader_id);
     gl::glAttachShader(shader_program_id, fragment_shader_id);
     gl::glLinkProgram(shader_program_id);
@@ -101,7 +101,7 @@ uint make_shader_program(
     return shader_program_id;
 }
 
-uint make_shader_program(
+unsigned int make_shader_program(
     std::string vertex_shader_source,
     std::string fragment_shader_source
 ) {
@@ -126,8 +126,8 @@ ShaderProgram::ShaderProgram(
 }
 
 ShaderProgram::ShaderProgram(
-    uint vertex_shader_id,
-    uint fragment_shader_id
+    unsigned int vertex_shader_id,
+    unsigned int fragment_shader_id
 ) {
     this->id = make_shader_program(vertex_shader_id, fragment_shader_id);
 }

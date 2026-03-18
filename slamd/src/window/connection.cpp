@@ -9,7 +9,7 @@ namespace slamd {
 
 Connection::Connection(
     std::string ip,
-    ushort port
+    unsigned short port
 )
     : ip(ip),
       port(port),
