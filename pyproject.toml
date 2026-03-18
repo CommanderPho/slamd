@@ -4,11 +4,11 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "slamd"
-version = "3.0.2"
+version = "3.1.0"
 description = "A 3D visualiztion library"
 authors = [{ name = "Robert Leo", email = "robert.leo.jonsson@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = ["numpy>=1.23"]
 
 [project.scripts]
@@ -26,7 +26,7 @@ dev = [
     "pyright",
     "ruff",
     "scikit-build-core>=0.10",
-    "scipy>=1.15.2",
+    "scipy>=1.13.1,<1.14.0",
 ]
 
 [tool.scikit-build]

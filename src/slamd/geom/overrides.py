@@ -1,4 +1,5 @@
 import numpy as np
+from typing import Union, Optional
 from ..bindings.geom import (
     PointCloud as PointCloud_internal,
     Spheres as Spheres_internal,
@@ -14,8 +15,8 @@ from .._utils.handle_input import process_color, process_radii, process_single_c
 
 def PointCloud(
     positions: np.ndarray,
-    colors: np.ndarray | tuple[int, int, int] = Color.black,
-    radii: np.ndarray | float = 1.0,
+    colors: Union[np.ndarray, tuple[int, int, int]] = Color.black,
+    radii: Union[np.ndarray, float] = 1.0,
     min_brightness: float = 1.0,
 ):
     """A 3D point cloud.
@@ -41,7 +42,7 @@ def PointCloud(
 def PolyLine(
     points: np.ndarray,
     thickness: float = 1.0,
-    color: np.ndarray | tuple[int, int, int] = Color.red,
+    color: Union[np.ndarray, tuple[int, int, int]] = Color.red,
     min_brightness: float = 1.0,
 ):
     """A 3D polyline made of straight segments.
@@ -56,7 +57,7 @@ def PolyLine(
     return PolyLine_internal(points, thickness, color_np, min_brightness)
 
 
-def Sphere(radius: float, color: np.ndarray | tuple[int, int, int] = Color.blue):
+def Sphere(radius: float, color: Union[np.ndarray, tuple[int, int, int]] = Color.blue):
     """A solid 3D sphere.
 
     Args:
@@ -69,7 +70,7 @@ def Sphere(radius: float, color: np.ndarray | tuple[int, int, int] = Color.blue)
 def Arrows(
     starts: np.ndarray,
     ends: np.ndarray,
-    colors: np.ndarray | tuple[int, int, int] = Color.dark_red,
+    colors: Union[np.ndarray, tuple[int, int, int]] = Color.dark_red,
     thickness: float = 0.5,
 ):
     """A collection of 3D arrows from start to end points.
@@ -92,21 +93,21 @@ def Arrows(
 def Plane(
     normal: np.ndarray,
     point: np.ndarray,
-    color: np.ndarray | tuple[int, int, int] = Color.blue,
+    color: Union[np.ndarray, tuple[int, int, int]] = Color.blue,
     radius: float = 1.0,
     alpha: float = 0.8,
 ):
     return Plane_internal(normal, point, process_single_color(color), radius, alpha)
 
 
-def Triad(pose: np.ndarray | None = None, scale: float = 1.0, thickness: float = 1.0):
+def Triad(pose: Optional[np.ndarray] = None, scale: float = 1.0, thickness: float = 1.0):
     return Triad_internal(pose, scale, thickness)
 
 
 def Spheres(
     positions: np.ndarray,
-    colors: np.ndarray | tuple[int, int, int] = Color.black,
-    radii: np.ndarray | float = 1.0,
+    colors: Union[np.ndarray, tuple[int, int, int]] = Color.black,
+    radii: Union[np.ndarray, float] = 1.0,
     min_brightness: float = 0.3,
 ):
     """3D spheres with per-point color and radius.

@@ -1,7 +1,8 @@
 import numpy as np
+from typing import Union
 
 
-def process_radii(radii: np.ndarray | float, n: int) -> np.ndarray:
+def process_radii(radii: Union[np.ndarray, float], n: int) -> np.ndarray:
     if isinstance(radii, float) or isinstance(radii, int):
         radii_np = np.full((n,), float(radii), dtype=np.float32)
     elif isinstance(radii, np.ndarray):
@@ -15,7 +16,7 @@ def process_radii(radii: np.ndarray | float, n: int) -> np.ndarray:
     return radii_np
 
 
-def process_color(colors: np.ndarray | tuple[int, int, int], n: int) -> np.ndarray:
+def process_color(colors: Union[np.ndarray, tuple[int, int, int]], n: int) -> np.ndarray:
     if isinstance(colors, tuple):
         colors_np = np.tile(np.array(colors, dtype=np.float32) / 255.0, (n, 1))
     elif isinstance(colors, np.ndarray):
@@ -34,7 +35,7 @@ def process_color(colors: np.ndarray | tuple[int, int, int], n: int) -> np.ndarr
     return colors_np
 
 
-def process_single_color(color: np.ndarray | tuple[int, int, int]) -> np.ndarray:
+def process_single_color(color: Union[np.ndarray, tuple[int, int, int]]) -> np.ndarray:
     if isinstance(color, tuple):
         return np.array(color, dtype=np.float32) / 255.0
     elif isinstance(color, np.ndarray):
